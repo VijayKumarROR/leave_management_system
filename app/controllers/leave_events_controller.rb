@@ -1,0 +1,2 @@
+class LeaveEventsController < ApplicationController
+end

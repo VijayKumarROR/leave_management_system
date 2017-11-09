@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2017-11-10 01:06:39
+  end_date: 2017-11-10 01:06:39
+  leave_apply_date: 2017-11-10 01:06:39
+  reason_for_leave: MyString
+  reporting_head_name: MyString
+  leave_status: false
+
+two:
+  start_date: 2017-11-10 01:06:39
+  end_date: 2017-11-10 01:06:39
+  leave_apply_date: 2017-11-10 01:06:39
+  reason_for_leave: MyString
+  reporting_head_name: MyString
+  leave_status: false

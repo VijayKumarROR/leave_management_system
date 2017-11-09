@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<div class="container">
+	<div class="row">
+		<%= form_for :leave do |l| %>
+			<div class="form-group">
+				<%= l.label :start_date%>
+				<%= l.text_field :start_date,:id=> "datepicker" %>
+			</div>
+
+			<div class="form-group">
+				<%= l.label :end_date%>
+				<%= l.label :end_date, :id=>"datepicker1"%>
+			</div>
+
+			<div class="form-group"> 
+				<%= l.label :leave_apply_date%>
+				<%= l.text_field :leave_apply_date%>
+			</div>
+
+			<div class="form-group">
+				<%= l.label :reason_for_leave%>
+				<%= l.text_field :reason_for_leave%>
+			</div>
+
+			<div class="form-group">
+				<%= l.label :reporting_head_name%>
+				<%= l.text_field :reporting_head_name%>
+			</div>
+
+			<div class="btn btn-submit">
+				<%= l.submit "Create Leave"%>
+			</div>
+			<% end %>
+	</div>
+</div>
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker1" ).datepicker();
+  } );
+  </script>
