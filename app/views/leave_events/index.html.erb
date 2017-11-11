@@ -20,7 +20,7 @@
         <td><%= i+=1%></td>
         <td><%= link_to leave.key, :controller => "leave_events", :Action => "show" %></td>
         <td><%= leave.reporting_head_name %></td>
-        <td><%= leave.status%></td>
+        <td><%= leave.leave_status%></td>
       </tr>
     <% end %>
   </tbody>
@@ -39,7 +39,7 @@
 <style type="text/css">
 	body
 	{
-		background-color: black;
+		background-color: green;
 	}
 	a
 	{

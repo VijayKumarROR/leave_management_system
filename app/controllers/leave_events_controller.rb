@@ -10,7 +10,7 @@ class LeaveEventsController < ApplicationController
 		if @leave.save
 			p @leave
 			flash[:notice] = "New Leave Has Been Saved"
-			redirect_to :controller => "leave_events", :action => "index"
+			redirect_to leave_events_path
 		else
 			render "new"
 		end

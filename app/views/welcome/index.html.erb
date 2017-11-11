@@ -1,1 +1,54 @@
+<h1>Pending Status:	</h1>
+<table id="leave_list" class="responstable" border="0" width="100%" >
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Reporting Head Name</th>
+      <th>Leave Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pending.each do |leave| %>
+      <tr>
+        <td><%= link_to leave.key, :controller => "leave_events", :Action => "show" %></td>
+        <td><%= leave.reporting_head_name %></td>
+        <td><%= leave.leave_status%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<br>
+
+<h1>completed Status: </h1>
+<table id="leave_list" class="responstable" border="0" width="100%" >
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Reporting Head Name</th>
+      <th>Leave Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @completed.each do |leave| %>
+      <tr>
+        <td><%= link_to leave.key, :controller => "leave_events", :Action => "show" %></td>
+        <td><%= leave.reporting_head_name %></td>
+        <td><%= leave.leave_status%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to "Create Leave", :controller => "leave_events", :action => "new"%>
+<style type="text/css">
+	body
+	{
+		background-color: green;
+	}
+</style>
