@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery
+//= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
 //= require_tree .
+<%= stylesheet_link_tag 'application', 'thickbox' %>
+<%= javascript_include_tag 'jquery-1.3.2.min', 'jquery.validate.min', 'application' %>

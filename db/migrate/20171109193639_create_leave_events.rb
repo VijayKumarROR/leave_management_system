@@ -5,6 +5,7 @@ class CreateLeaveEvents < ActiveRecord::Migration
       t.datetime :end_date
       t.datetime :leave_apply_date
       t.string :reason_for_leave
+      t.string :status, default: "pending"
       t.string :reporting_head_name
       t.boolean :leave_status
 

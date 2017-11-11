@@ -1,1 +1,39 @@
-show.html.erb
+<table id="leave_list" class="responstable" border="0" width="100%" >
+  <thead>
+    <tr>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>reason_for_leave</th>
+      <th>Reporting Head Name</th>
+      <th>Leave Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.leave_events.each do |leave| %>
+      <tr>
+        <td><%= leave.start_date %></td>
+        <td><%= leave.end_date %></td>
+        <td><%= leave.reason_for_leave %></td>
+        <td><%= leave.reporting_head_name %></td>
+        <td><%= leave.leave_status%></td>
+        <% if @leave.verify?%>
+        <td><%= link_to "Verify", verify_leave_event_path, method: :post, :class => 'btn btn-success'%>
+        
+        <td><%= link_to "rejected",reject_leave_event_path, method: :post, :class =>'btn btn-success'%>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- 
+<script type="text/javascript">
+  jQuery.noConflict();
+  (function( $ ) {
+    jQuery(function() {
+      jQuery('#leave_list').DataTable();
+  });
+  })(jQuery);
+</script>
+ -->

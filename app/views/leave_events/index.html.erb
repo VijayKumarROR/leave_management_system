@@ -1,0 +1,48 @@
+<%if @use.email == "manager@gmail.com"%>
+	<h2>Welcome Manager</h2>
+<%else%>
+	<h2>Welcome Employee></h2>
+<%end%>
+<table id="leave_list" class="responstable" border="0" width="100%" >
+  <thead>
+    <tr>
+      <th>SI.NO</th>
+      <th>Key</th>
+      <th>Reporting Head Name</th>
+      <th>Leave Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%i = 0%>
+    <% current_user.leave_events.each do |leave| %>
+      <tr>
+        <td><%= i+=1%></td>
+        <td><%= link_to leave.key, :controller => "leave_events", :Action => "show" %></td>
+        <td><%= leave.reporting_head_name %></td>
+        <td><%= leave.status%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+  jQuery.noConflict();
+  (function( $ ) {
+    jQuery(function() {
+      jQuery('#leave_list').DataTable();
+  });
+  })(jQuery);
+</script>
+
+<style type="text/css">
+	body
+	{
+		background-color: black;
+	}
+	a
+	{
+		color: red;
+	}
+</style>

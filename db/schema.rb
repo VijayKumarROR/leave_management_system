@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109200330) do
+ActiveRecord::Schema.define(version: 20171110071402) do
 
   create_table "leave_events", force: :cascade do |t|
     t.datetime "start_date"
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 20171109200330) do
     t.string   "reason_for_leave"
     t.string   "reporting_head_name"
     t.boolean  "leave_status"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "user_id"
     t.integer  "manager_id"
+    t.string   "pending",             default: "pending"
     t.string   "key"
   end
 

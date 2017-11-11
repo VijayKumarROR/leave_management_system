@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
+      devise_scope :user do
+        authenticated :user do
+        #root :to => 'categories#new', as: :authenticated_root
+      end
+      unauthenticated :user do
+        root :to => 'devise/sessions#new', as: :unauthenticated_root
+      end
+    end
+       root "welcome#index"
+
+    resource :leave_events
+    
+  resources :leave_events do
+    member do
+      post :verify
+      post :reject
+      end
+    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

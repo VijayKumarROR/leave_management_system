@@ -3,33 +3,43 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+ <div class="jumbotron text-center">
+<h1 align="center">New Categories</h1>
+</div>
+ 
 <div class="container">
 	<div class="row">
-		<%= form_for :leave do |l| %>
+		<%= form_for @leave do |l| %>
 			<div class="form-group">
 				<%= l.label :start_date%>
-				<%= l.text_field :start_date,:id=> "datepicker" %>
+				<%= l.date_field :start_date, :class=> "datepicker", :required => true %>
 			</div>
 
 			<div class="form-group">
 				<%= l.label :end_date%>
-				<%= l.label :end_date, :id=>"datepicker1"%>
+				<%= l.date_field :end_date, :class=>"datepicker1", :required => true%>
 			</div>
 
 			<div class="form-group"> 
 				<%= l.label :leave_apply_date%>
-				<%= l.text_field :leave_apply_date%>
+				<%= l.date_field :leave_apply_date, :class => "datepicker3", :required => true%>
 			</div>
 
 			<div class="form-group">
 				<%= l.label :reason_for_leave%>
-				<%= l.text_field :reason_for_leave%>
+				<%= l.text_field :reason_for_leave, :required => true%>
 			</div>
 
 			<div class="form-group">
 				<%= l.label :reporting_head_name%>
-				<%= l.text_field :reporting_head_name%>
+				<%= l.text_field :reporting_head_name, :required => true%>
 			</div>
+
+			<div class="form-group">
+          		<b> Status: </b> <br><label class="status" for="status"><%= t('Pending') %></label>
+           			<%= l.radio_button  "leave_status", "pending", :checked => "checked" %>
+            	<label class="label_for_status" for="add_grade_status_true">
+            </label> <br>
 
 			<div class="btn btn-submit">
 				<%= l.submit "Create Leave"%>
@@ -40,7 +50,8 @@
 
 <script>
   $( function() {
-    $( "#datepicker" ).datepicker();
-    $( "#datepicker1" ).datepicker();
+    $( ".datepicker" ).datepicker();
+    // $( "#datepicker1" ).datepicker();
+    // $( "#datepicker3" ).datepicker();
   } );
   </script>

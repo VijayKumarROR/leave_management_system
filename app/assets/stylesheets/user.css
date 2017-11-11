@@ -1,0 +1,31 @@
+body
+  {
+    background-color: green;
+  }
+.header
+  {
+    margin-left: 190px;
+  }
+  .register
+  {
+    border: ridge 10px black;
+    width: 450px;
+    padding: 100px;
+    margin-top: 70px;
+    margin-left: 366px;
+  }
+  .form-group
+  {
+    color: black;
+    margin-left: 140px;
+    padding: 15px;
+  }
+  .form-group label
+  {
+    font-size: 20px;
+  }
+  .actions
+  {
+    margin-left: 180px;
+    padding: 10px;  
+  }

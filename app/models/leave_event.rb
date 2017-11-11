@@ -1,7 +1,9 @@
 class LeaveEvent < ActiveRecord::Base
 	belongs_to :user
     before_create :key_generating
-    validates_presence_of :start_date, :end_date, :apply_leave_date, :reporting_head_name
+    validates_presence_of :start_date, :end_date, :leave_apply_date, :reporting_head_name
+    scope :completed, -> { where.not(status: false) }
+
 
 	STATUS = %i{pending approved rejected cancelled}.freeze
 
@@ -16,10 +18,10 @@ class LeaveEvent < ActiveRecord::Base
 	end
 
 	def verify?
-		status == "pending"
+		leave_status == 'false'
 	end
 
 	def key_generating
-		self.key = SecureRandom.hex(5).lowcase
+		self.key = SecureRandom.hex(5).upcase
 	end
 end
